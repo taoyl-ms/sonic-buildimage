@@ -13,3 +13,5 @@ RUN tar xzf /deps/saithrift-0.9.tar.gz -C /usr/share/; \
 
 # Uncomment for auto-testing dockers
 #ENTRYPOINT ["/usr/bin/ptf", "--test-dir", "/usr/share/ptf-tests"]
+ENTRYPOINT ["/usr/bin/supervisord"]
+
