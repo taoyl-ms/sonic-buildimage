@@ -60,7 +60,7 @@ p4-switch_1.0.0_amd64.deb: thrift-compiler_0.9.3-2_amd64.deb python-thrift_0.9.3
 quagga_0.99.24.1-2.1_amd64.deb:
 	$(call build_project, sonic-quagga)
 	
-libswsscommon_1.0.0_amd64.deb libswsscommon-dev_1.0.0_amd64.deb: redis-server_$(REDIS_VERSION).deb redis-tools_$(REDIS_VERSION).deb libhiredis0.13_0.13.3-2_amd64.deb libhiredis-dev_0.13.3-2_amd64.deb
+libswsscommon_1.0.0_amd64.deb libswsscommon-dev_1.0.0_amd64.deb: redis-server_$(REDIS_VERSION).deb redis-tools_$(REDIS_VERSION).deb libhiredis0.13_0.13.3-2_amd64.deb libhiredis-dev_0.13.3-2_amd64.deb $(LIBNL-DEBS)
 	$(foreach dep, $^, $(call install_deb, $(dep)))
 	$(call build_project, sonic-swss-common)
 
